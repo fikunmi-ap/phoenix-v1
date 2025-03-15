@@ -52,7 +52,7 @@ pub fn create_new_order_instruction_with_custom_token_accounts(
             accounts: vec![
                 AccountMeta::new_readonly(crate::id(), false),
                 AccountMeta::new_readonly(phoenix_log_authority::id(), false),
-                AccountMeta::new(*market, false),
+                AccountMeta::new_readonly(*market, false),
                 AccountMeta::new_readonly(*trader, true),
                 AccountMeta::new(*base_account, false),
                 AccountMeta::new(*quote_account, false),

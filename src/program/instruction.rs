@@ -29,7 +29,7 @@ pub enum PhoenixInstruction {
     /// Place a limit order on the book. The order can cross if the supplied order type is Limit
     #[account(0, name = "phoenix_program", desc = "Phoenix program")]
     #[account(1, name = "log_authority", desc = "Phoenix log authority")]
-    #[account(2, writable, name = "market", desc = "This account holds the market state")]
+    #[account(2, name = "market", desc = "This account holds the market state")]
     #[account(3, signer, name = "trader")]
     #[account(4, name = "seat")]
     #[account(5, writable, name = "base_account", desc = "Trader base token account")]

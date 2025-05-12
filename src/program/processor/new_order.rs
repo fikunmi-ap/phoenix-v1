@@ -226,6 +226,7 @@ pub(crate) fn process_place_limit_order<'a, 'info>(
     record_event_fn: &mut dyn FnMut(MarketEvent<Pubkey>),
     order_ids: &mut Vec<FIFOOrderId>,
 ) -> ProgramResult {
+    phoenix_log!("CUs at validation start {:#?}", solana_program::log::sol_log_compute_units());
     let new_order_context = NewOrderContext::load_post_allowed(market_context, accounts, false)?;
     let mut order_packet = decode_order_packet(data).ok_or_else(|| {
         phoenix_log!("Failed to decode order packet");
@@ -246,6 +247,7 @@ pub(crate) fn process_place_limit_order<'a, 'info>(
         ProgramError::InvalidInstructionData,
         "Instruction does not allow using deposited funds",
     )?;
+    phoenix_log!("CUs at validation end {:#?}", solana_program::log::sol_log_compute_units());
     process_new_order(
         new_order_context,
         market_context,
@@ -364,6 +366,7 @@ fn process_new_order<'a, 'info>(
     record_event_fn: &mut dyn FnMut(MarketEvent<Pubkey>),
     order_ids: &mut Vec<FIFOOrderId>,
 ) -> ProgramResult {
+    phoenix_log!("CUs at insertion start {:#?}", solana_program::log::sol_log_compute_units());
     let PhoenixMarketContext {
         market_info,
         signer: trader,
@@ -496,7 +499,7 @@ fn process_new_order<'a, 'info>(
         phoenix_log!("WARNING: Deposited amount of funds were insufficient to execute the order");
         return Err(ProgramError::InsufficientFunds);
     }
-
+    phoenix_log!("CUs at insertion end {:#?}", solana_program::log::sol_log_compute_units());
     Ok(())
 }
 

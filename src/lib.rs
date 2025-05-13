@@ -164,7 +164,7 @@ pub fn process_instruction(
             )?;
         }
         PhoenixInstruction::PlaceLimitOrder => {
-            phoenix_log!("PhoenixInstruction::PlaceLimitOrder3");
+            phoenix_log!("PhoenixInstruction::PlaceLimitOrder");
             new_order::process_place_limit_order(
                 program_id,
                 &market_context,

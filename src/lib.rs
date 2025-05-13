@@ -67,7 +67,7 @@ pub mod phoenix_log_authority {
     // The address of the PDA is 7aDTsspkQNGKmrexAN7FLx9oxU3iPczSSvHNggyuqYkR
     // The bump seed is stored in a variable called bump()
     declare_pda!(
-        "6zFwG3KozYkxy5Jt73Zy1cm83P6iz2SycmyqokaFBPAG",
+        "7LshKPZxuSn2eGFGZttpXuQrP2g4rZrjvYMdcToUsXfU",
         "ArsuuPTKo9dBnzFVjf7cp9LwSYCWqiEzZ4M9k1TJ8qhA",
         "log"
     );
@@ -164,7 +164,7 @@ pub fn process_instruction(
             )?;
         }
         PhoenixInstruction::PlaceLimitOrder => {
-            phoenix_log!("PhoenixInstruction::PlaceLimitOrder");
+            phoenix_log!("PhoenixInstruction::PlaceLimitOrder3");
             new_order::process_place_limit_order(
                 program_id,
                 &market_context,

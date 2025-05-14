@@ -54,7 +54,7 @@ security_txt! {
     auditors: "contact@osec.io"
 }
 
-declare_id!("PhoeNiXZ8ByJGLkxNfZRnkUfjvmuYqLR89jjFHGqdXY");
+declare_id!("ArsuuPTKo9dBnzFVjf7cp9LwSYCWqiEzZ4M9k1TJ8qhA");
 
 /// This is a static PDA with seeds: [b"log"]
 /// If the program id changes, this will also need to be updated
@@ -67,8 +67,8 @@ pub mod phoenix_log_authority {
     // The address of the PDA is 7aDTsspkQNGKmrexAN7FLx9oxU3iPczSSvHNggyuqYkR
     // The bump seed is stored in a variable called bump()
     declare_pda!(
-        "7aDTsspkQNGKmrexAN7FLx9oxU3iPczSSvHNggyuqYkR",
-        "PhoeNiXZ8ByJGLkxNfZRnkUfjvmuYqLR89jjFHGqdXY",
+        "7LshKPZxuSn2eGFGZttpXuQrP2g4rZrjvYMdcToUsXfU",
+        "ArsuuPTKo9dBnzFVjf7cp9LwSYCWqiEzZ4M9k1TJ8qhA",
         "log"
     );
 
